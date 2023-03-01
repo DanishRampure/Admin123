@@ -24,7 +24,7 @@ def connect(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('/admin/dashboard')
+            return redirect('/admin1/dashboard')
         else:
             messages.info(request,"Invalid Username or Password")
             return redirect('/')
@@ -43,7 +43,7 @@ def dashboard(request):
 
 def handellogout(request):
     logout(request)
-    return redirect('/admin')
+    return redirect('/admin1')
 
 
 
@@ -104,8 +104,8 @@ def userinfo(request):
     return render(request,'admin/new2.html',
                   {'userlist':userlist})
 
-def dashboard(request):
-    return render(request,'admin/new3.html')
+# def dashboard(request):
+#     return render(request,'admin/new3.html')
 
 def managereviews(request):
     return render(request,'admin/new4.html')
